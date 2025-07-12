@@ -1,5 +1,9 @@
+
+'use client';
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Lightbulb } from "lucide-react";
 
 const skills = [
@@ -8,9 +12,16 @@ const skills = [
 ];
 
 export default function SkillsSection() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section id="skills" className="w-full py-16 md:py-24">
-      <div className="container mx-auto px-4 md:px-6">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 md:px-6 transition-all duration-700 ease-out ${
+          isVisible ? 'animate-fade-in-up' : 'opacity-0'
+        }`}
+      >
         <div className="flex flex-col items-center text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">Technical Skills</h2>
           <p className="max-w-2xl mt-2 text-muted-foreground">My proficiency across various technologies in development and data science.</p>

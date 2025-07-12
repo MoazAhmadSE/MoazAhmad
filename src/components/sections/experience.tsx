@@ -1,4 +1,8 @@
+
+'use client';
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Briefcase } from 'lucide-react';
 
 const experienceData = [
@@ -16,9 +20,16 @@ const experienceData = [
 ];
 
 export default function ExperienceSection() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section id="experience" className="w-full py-16 md:py-24">
-      <div className="container mx-auto px-4 md:px-6">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 md:px-6 transition-all duration-700 ease-out ${
+          isVisible ? 'animate-fade-in-up' : 'opacity-0'
+        }`}
+      >
         <div className="flex flex-col items-center text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">Professional Experience</h2>
           <p className="max-w-2xl mt-2 text-muted-foreground">My journey in the tech industry, gaining valuable skills and insights.</p>

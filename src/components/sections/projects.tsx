@@ -1,4 +1,8 @@
+
+'use client';
+
 import ProjectCard from '../project-card';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const projectsData = [
   {
@@ -40,9 +44,15 @@ const projectsData = [
 ];
 
 export default function ProjectsSection() {
+  const { ref, isVisible } = useScrollAnimation();
   return (
     <section id="projects" className="w-full py-16 md:py-24 bg-card">
-      <div className="container mx-auto px-4 md:px-6">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 md:px-6 transition-all duration-700 ease-out ${
+          isVisible ? 'animate-fade-in-up' : 'opacity-0'
+        }`}
+      >
         <div className="flex flex-col items-center text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">My Projects</h2>
           <p className="max-w-2xl mt-2 text-muted-foreground">A selection of projects that showcase my skills and passion for development.</p>

@@ -1,4 +1,8 @@
+
+'use client';
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { GraduationCap } from 'lucide-react';
 
 const educationData = [
@@ -19,9 +23,16 @@ const educationData = [
 ];
 
 export default function EducationSection() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section id="education" className="w-full py-16 md:py-24 bg-secondary/50">
-      <div className="container mx-auto px-4 md:px-6">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 md:px-6 transition-all duration-700 ease-out ${
+          isVisible ? 'animate-fade-in-up' : 'opacity-0'
+        }`}
+      >
         <div className="flex flex-col items-center text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-headline">Education</h2>
             <p className="max-w-2xl mt-2 text-muted-foreground">My academic journey and qualifications.</p>

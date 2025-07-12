@@ -1,10 +1,21 @@
+
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function AboutSection() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section id="about" className="w-full py-16 md:py-24">
-      <div className="container mx-auto px-4 md:px-6">
+      <div
+        ref={ref}
+        className={`container mx-auto px-4 md:px-6 transition-all duration-700 ease-out ${
+          isVisible ? 'animate-fade-in-up' : 'opacity-0'
+        }`}
+      >
         <div className="grid gap-10 md:grid-cols-5 items-center">
           <div className="md:col-span-2">
             <Card className="overflow-hidden">
