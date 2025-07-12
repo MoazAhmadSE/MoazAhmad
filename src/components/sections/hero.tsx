@@ -1,9 +1,35 @@
+
+'use client';
+
+import React, { useRef, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import VanillaTilt from 'vanilla-tilt';
 import { Button } from '@/components/ui/button';
 import { Download, Github, Linkedin } from 'lucide-react';
-import Link from 'next/link';
-import LottiePlayer from '@/components/lottie-player';
 
 export default function HeroSection() {
+  const tiltRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const tiltElement = tiltRef.current;
+    if (tiltElement) {
+      VanillaTilt.init(tiltElement, {
+        max: 8,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.2,
+        scale: 1.05,
+      });
+    }
+
+    return () => {
+      if (tiltElement && (tiltElement as any).vanillaTilt) {
+        (tiltElement as any).vanillaTilt.destroy();
+      }
+    };
+  }, []);
+
   return (
     <section id="hero" className="w-full py-20 md:py-32 lg:py-40 bg-card">
       <div className="container mx-auto px-4 md:px-6">
@@ -23,7 +49,7 @@ export default function HeroSection() {
                 <Link href="#contact">Get in Touch</Link>
               </Button>
                <Button asChild size="lg" variant="outline">
-                <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Link href="/MoazAhmad-Resume.pdf" target="_blank" rel="noopener noreferrer">
                     <Download className="mr-2 h-4 w-4" />
                     Resume
                 </Link>
@@ -45,7 +71,16 @@ export default function HeroSection() {
               </div>
           </div>
           <div className="flex items-center justify-center">
-             <LottiePlayer />
+             <div ref={tiltRef} className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative animate-float">
+                <Image
+                  src="/profile.png"
+                  alt="Moaz Ahmad"
+                  width={400}
+                  height={400}
+                  className="rounded-full object-cover border-4 border-primary/20 shadow-2xl"
+                  priority
+                />
+             </div>
           </div>
         </div>
       </div>

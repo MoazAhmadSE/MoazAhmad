@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -42,7 +43,7 @@ export default function Header() {
           </nav>
           <div className="hidden md:flex items-center space-x-2">
             <Button asChild variant="outline" size="sm">
-                <Link href="/resume.pdf" target="_blank">
+                <Link href="/MoazAhmad-Resume.pdf" target="_blank">
                     <Download className="mr-2 h-4 w-4" />
                     Resume
                 </Link>
@@ -77,7 +78,7 @@ export default function Header() {
                     </Link>
                   ))}
                   <Button asChild className="mt-4" >
-                    <Link href="/resume.pdf" target="_blank" onClick={() => setIsOpen(false)}>
+                    <Link href="/MoazAhmad-Resume.pdf" target="_blank" onClick={() => setIsOpen(false)}>
                         <Download className="mr-2 h-4 w-4" />
                         Download Resume
                     </Link>
