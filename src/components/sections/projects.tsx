@@ -40,7 +40,6 @@ const projectsData = [
     githubUrl: 'https://github.com/MoazAhmadSE',
     liveUrl: '#',
     Icon: EquiloIcon,
-    imageHint: 'finance management app'
   },
 ];
 

@@ -3,7 +3,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { User } from 'lucide-react';
+import Image from 'next/image';
 
 export default function AboutSection() {
   const { ref, isVisible } = useScrollAnimation();
@@ -18,8 +18,14 @@ export default function AboutSection() {
       >
         <div className="grid gap-10 md:grid-cols-5 items-center">
           <div className="md:col-span-2">
-            <div className="overflow-hidden rounded-full border-4 border-secondary shadow-lg aspect-square bg-secondary flex items-center justify-center">
-              <User className="w-1/2 h-1/2 text-muted-foreground" />
+             <div className="relative overflow-hidden rounded-full border-4 border-secondary shadow-lg aspect-square">
+              <Image
+                src="https://placehold.co/400x400.png"
+                alt="Moaz Ahmad"
+                fill
+                className="object-cover"
+                data-ai-hint="profile picture"
+              />
             </div>
           </div>
           <div className="md:col-span-3">
