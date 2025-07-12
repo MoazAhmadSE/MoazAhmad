@@ -6,15 +6,6 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const projectsData = [
   {
-    title: 'Equilo – Group Expense Manager',
-    description: 'A modern Splitwise-style expense tracker with smart debt logic, Firebase Auth, Firestore, animated UI, and admin-controlled group management.',
-    technologies: ['React', 'Firebase', 'Tailwind CSS', 'Firestore'],
-    githubUrl: 'https://github.com/MoazAhmadSE',
-    liveUrl: '#',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'finance management app'
-  },
-  {
     title: 'AuthTodo',
     description: 'A todo application with a secure login system. It leverages React and localStorage to provide custom task lists for each user, ensuring data privacy.',
     technologies: ['React', 'JavaScript', 'HTML/CSS', 'localStorage'],
@@ -40,6 +31,15 @@ const projectsData = [
     liveUrl: 'https://nasa-apod-07.netlify.app/',
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'space galaxy'
+  },
+  {
+    title: 'Equilo – Group Expense Manager',
+    description: 'A modern Splitwise-style expense tracker with smart debt logic, Firebase Auth, Firestore, animated UI, and admin-controlled group management.',
+    technologies: ['React', 'Firebase', 'Tailwind CSS', 'Firestore'],
+    githubUrl: 'https://github.com/MoazAhmadSE',
+    liveUrl: '#',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'finance management app'
   },
 ];
 
