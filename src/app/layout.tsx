@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
+import Chatbot from '@/components/chatbot';
 
 export const metadata: Metadata = {
   title: 'Moaz Ahmad | Developer & Data Scientist',
@@ -28,6 +29,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Chatbot />
           <Toaster />
         </ThemeProvider>
       </body>
