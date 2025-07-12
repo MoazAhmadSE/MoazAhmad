@@ -16,8 +16,9 @@ interface ProjectCardProps {
   technologies: string[];
   githubUrl: string;
   liveUrl?: string;
-  imageUrl: string;
-  imageHint: string;
+  imageUrl?: string;
+  imageHint?: string;
+  Icon?: React.ElementType;
 }
 
 export default function ProjectCard({
@@ -28,6 +29,7 @@ export default function ProjectCard({
   liveUrl,
   imageUrl,
   imageHint,
+  Icon,
 }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -53,15 +55,21 @@ export default function ProjectCard({
   return (
     <div ref={cardRef}>
       <Card className="h-full flex flex-col overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-primary/20 bg-card">
-        <div className="relative w-full aspect-video overflow-hidden">
-          <Image
-            src={imageUrl}
-            alt={title}
-            fill
-            className="object-cover"
-            data-ai-hint={imageHint}
-          />
-        </div>
+        {Icon ? (
+          <div className="relative w-full aspect-video overflow-hidden flex items-center justify-center bg-secondary/30 p-8">
+            <Icon className="w-32 h-32 text-primary" />
+          </div>
+        ) : imageUrl && (
+          <div className="relative w-full aspect-video overflow-hidden">
+            <Image
+              src={imageUrl}
+              alt={title}
+              fill
+              className="object-cover"
+              data-ai-hint={imageHint}
+            />
+          </div>
+        )}
         <CardHeader>
           <CardTitle className="font-headline">{title}</CardTitle>
           <div className="flex flex-wrap gap-2 pt-2">

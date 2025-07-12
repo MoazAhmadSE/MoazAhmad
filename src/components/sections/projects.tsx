@@ -3,6 +3,7 @@
 
 import ProjectCard from '../project-card';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import EquiloIcon from '../icons/equilo-icon';
 
 const projectsData = [
   {
@@ -38,7 +39,7 @@ const projectsData = [
     technologies: ['React', 'Firebase', 'Tailwind CSS', 'Firestore'],
     githubUrl: 'https://github.com/MoazAhmadSE',
     liveUrl: '#',
-    imageUrl: 'https://placehold.co/600x400.png',
+    Icon: EquiloIcon,
     imageHint: 'finance management app'
   },
 ];
