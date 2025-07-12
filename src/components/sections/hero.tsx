@@ -73,13 +73,12 @@ export default function HeroSection() {
           <div className="flex items-center justify-center">
              <div ref={tiltRef} className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative animate-float">
                 <Image
-                  src="https://placehold.co/400x400.png"
+                  src="https://storage.googleapis.com/aifirebase-cloud-storage-prod/users%2F-Ls_62y-FE-HEb_vS5W%2F-LwR6I7-XgYqQJtC-1b%2Fprofile.png"
                   alt="Moaz Ahmad"
                   width={400}
                   height={400}
                   className="rounded-full object-cover border-4 border-primary/20 shadow-2xl"
                   priority
-                  data-ai-hint="man portrait"
                 />
              </div>
           </div>
