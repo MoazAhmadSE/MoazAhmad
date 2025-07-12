@@ -20,11 +20,12 @@ export default function AboutSection() {
           <div className="md:col-span-2">
             <Card className="overflow-hidden rounded-full border-4 border-secondary shadow-lg">
               <Image 
-                src="/profile.png" 
+                src="https://placehold.co/400x400.png" 
                 alt="Moaz Ahmad" 
                 width={400} 
                 height={400} 
                 className="object-cover w-full h-full"
+                data-ai-hint="man portrait"
               />
             </Card>
           </div>
