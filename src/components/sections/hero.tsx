@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import VanillaTilt from 'vanilla-tilt';
 import { Button } from '@/components/ui/button';
-import { Download, Github, Linkedin } from 'lucide-react';
+import { Download, Github, Linkedin, User } from 'lucide-react';
 
 export default function HeroSection() {
   const tiltRef = useRef<HTMLDivElement>(null);
@@ -72,15 +72,9 @@ export default function HeroSection() {
           </div>
           <div className="flex items-center justify-center">
              <div ref={tiltRef} className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative animate-float">
-                <Image
-                  src="https://placehold.co/400x400.png"
-                  alt="Moaz Ahmad"
-                  width={400}
-                  height={400}
-                  className="rounded-full object-cover border-4 border-primary/20 shadow-2xl"
-                  data-ai-hint="man portrait"
-                  priority
-                />
+                <div className="w-full h-full rounded-full object-cover border-4 border-primary/20 shadow-2xl bg-secondary flex items-center justify-center">
+                  <User className="w-1/2 h-1/2 text-muted-foreground" />
+                </div>
              </div>
           </div>
         </div>
