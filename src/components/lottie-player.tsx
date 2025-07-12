@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -8,7 +9,7 @@ const LottiePlayer = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch('https://assets3.lottiefiles.com/packages/lf20_fh2n6h26.json')
+        fetch('https://assets1.lottiefiles.com/packages/lf20_v92o72md.json')
             .then(res => {
               if (!res.ok) {
                 throw new Error('Failed to fetch animation');
