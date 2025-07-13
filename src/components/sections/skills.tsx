@@ -7,8 +7,8 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Lightbulb } from "lucide-react";
 
 const skills = [
-    "JavaScript", "React", "Vue 3", "Node.js", "Python", "SQL",
-    "Firebase", "Tailwind CSS", "Pandas"
+    "JavaScript", "React", "Vue 3", "Python", "SQL",
+    "Firebase", "Tailwind CSS"
 ];
 
 export default function SkillsSection() {

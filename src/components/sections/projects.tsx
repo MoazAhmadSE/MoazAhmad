@@ -12,7 +12,7 @@ const projectsData = [
     technologies: ['React', 'JavaScript', 'HTML/CSS', 'localStorage'],
     githubUrl: 'https://github.com/MoazAhmadSE/Auth_Todo',
     liveUrl: 'https://authtodowithlocalstorage.netlify.app/home',
-    imageUrl: 'https://placehold.co/600x400.png',
+    imageUrl: '/authtodo.png',
     imageHint: 'task checklist'
   },
   {
@@ -21,7 +21,7 @@ const projectsData = [
     technologies: ['React', 'JavaScript', 'Material UI'],
     githubUrl: 'https://github.com/MoazAhmadSE/fitty-fit',
     liveUrl: 'https://fitty-fit07.netlify.app/',
-    imageUrl: 'https://placehold.co/600x400.png',
+    imageUrl: '/fittyfit.png',
     imageHint: 'fitness workout'
   },
   {
@@ -30,7 +30,7 @@ const projectsData = [
     technologies: ['React', 'NASA API', 'CSS'],
     githubUrl: 'https://github.com/MoazAhmadSE/Nasa-React-App',
     liveUrl: 'https://nasa-apod-07.netlify.app/',
-    imageUrl: 'https://placehold.co/600x400.png',
+    imageUrl: '/nasa.png',
     imageHint: 'space galaxy'
   },
   {

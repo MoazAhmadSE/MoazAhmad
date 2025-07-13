@@ -1,10 +1,8 @@
-
 'use client';
 
+import Image from 'next/image';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import AboutMeIcon from '@/components/icons/about-me';
-import { User } from 'lucide-react';
 
 export default function AboutSection() {
   const { ref, isVisible } = useScrollAnimation();
@@ -17,11 +15,20 @@ export default function AboutSection() {
           }`}
       >
         <div className="grid gap-10 md:grid-cols-5 items-center">
+          {/* Left: Profile Image */}
           <div className="md:col-span-2">
-            <div className="relative flex items-center justify-center rounded-full border-4 border-secondary shadow-lg aspect-square bg-primary">
-              <AboutMeIcon width={160} height={160} className="text-primary-foreground" />
+            <div className="relative flex items-center justify-center rounded-full border-4 border-secondary shadow-lg aspect-square overflow-hidden">
+              <Image
+                src="/about-me.png"
+                alt="Moaz Ahmad"
+                fill
+                className="object-cover rounded-full"
+                priority
+              />
             </div>
           </div>
+
+          {/* Right: About Card */}
           <div className="md:col-span-3">
             <Card>
               <CardHeader>
