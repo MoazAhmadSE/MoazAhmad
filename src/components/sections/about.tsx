@@ -1,9 +1,10 @@
 
 'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import Image from 'next/image';
+import AboutMeIcon from '@/components/icons/about-me';
+import { User } from 'lucide-react';
 
 export default function AboutSection() {
   const { ref, isVisible } = useScrollAnimation();
@@ -12,20 +13,13 @@ export default function AboutSection() {
     <section id="about" className="w-full py-16 md:py-24">
       <div
         ref={ref}
-        className={`container mx-auto px-4 md:px-6 transition-all duration-700 ease-out ${
-          isVisible ? 'animate-fade-in-up' : 'opacity-0'
-        }`}
+        className={`container mx-auto px-4 md:px-6 transition-all duration-700 ease-out ${isVisible ? 'animate-fade-in-up' : 'opacity-0'
+          }`}
       >
         <div className="grid gap-10 md:grid-cols-5 items-center">
           <div className="md:col-span-2">
-             <div className="relative overflow-hidden rounded-full border-4 border-secondary shadow-lg aspect-square">
-              <Image
-                src="https://placehold.co/400x400.png"
-                alt="Moaz Ahmad"
-                fill
-                className="object-cover"
-                data-ai-hint="profile picture"
-              />
+            <div className="relative flex items-center justify-center rounded-full border-4 border-secondary shadow-lg aspect-square bg-primary">
+              <AboutMeIcon width={160} height={160} className="text-primary-foreground" />
             </div>
           </div>
           <div className="md:col-span-3">
